@@ -17,7 +17,7 @@
     <http pattern="/login.jsp" security="none"/>
 
      <http auto-config="true" use-expressions="true">
-     	<intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
+     	<intercept-url pattern="/favicon.ico" filters="none" />
         <intercept-url pattern="/**" access="isAuthenticated()" />
     </http>
 
