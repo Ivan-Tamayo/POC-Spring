@@ -14,10 +14,15 @@
 
     <global-method-security pre-post-annotations="enabled" />
 
+
+	<!-- 
+    	<intercept-url pattern="/favicon.ico" filters="none" /> is not longer supported
+     -->
     <http pattern="/login.jsp" security="none"/>
+    <http pattern="/favicon.ico" security="none"/>
+    
 
      <http auto-config="true" use-expressions="true">
-     	<intercept-url pattern="/favicon.ico" filters="none" />
         <intercept-url pattern="/**" access="isAuthenticated()" />
     </http>
 
