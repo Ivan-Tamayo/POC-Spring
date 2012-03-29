@@ -37,7 +37,7 @@
 
     <authentication-manager>
         <authentication-provider>
-            <password-encoder ref="encoder"/>
+            <password-encoder ref="encoder" />
             <user-service>
                 <user name="rod" password="4efe081594ce25ee4efd9f7067f7f678a347bccf2de201f3adf2a3eb544850b465b4e51cdc3fcdde" authorities="supervisor, user, teller" />
                 <user name="dianne" password="957ea522524a41cbfb649a3e293d56268f840fd5b661b499b07858bc020d6d223f912e3ab303b00f" authorities="user,teller" />
