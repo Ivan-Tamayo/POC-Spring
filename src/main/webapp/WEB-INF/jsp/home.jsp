@@ -12,10 +12,14 @@
         <spring:message code="welcome.message"/>
     </p>
     <hr/>
+    <table >
+    <tr><th>Siret</th>  <th>Nom</th>  <th>Prenom</th></tr>
     <c:forEach items="${users}" var="user">
-    	${user.siret} - ${user.nom} - ${user.prenom}
-    	<hr/>
+    	<tr>
+    	<td>${user.siret}</td> <td>${user.nom}</td> <td>${user.prenom}</td>
+    	</tr>
     </c:forEach>
+    </table>
     
     
 </body>
