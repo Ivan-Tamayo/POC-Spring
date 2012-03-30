@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.gipmds.arpej</groupId>
     <packaging>war</packaging>
-    <version>0.1</version>
-    <name>Spring Data JPA</name>
-    <description>Spring Data JPA</description>
+    <version>0.9</version>
+    <name>Proof of Concept Spring</name>
+    <description>Spring Data JPA, Spring Security</description>
     
     <url>http://net-entreprises.fr</url>
     <repositories>
