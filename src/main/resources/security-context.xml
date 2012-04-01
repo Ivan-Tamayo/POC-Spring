@@ -22,8 +22,12 @@
     <http pattern="/favicon.ico" security="none"/>
     
 
+
+	<!-- 
+		Filter https
+	-->	
      <http auto-config="true" use-expressions="true">
-        <intercept-url pattern="/**" access="isAuthenticated()" />
+        <intercept-url pattern="/**" access="isAuthenticated()" requires-channel="https" />
     </http>
 
     <!--
