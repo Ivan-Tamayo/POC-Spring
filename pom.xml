@@ -14,6 +14,13 @@
             <name>JBoss repository</name>
             <url>https://repository.jboss.org/nexus/content/groups/public</url>
         </repository>
+        
+        // Jelastic
+        <repository>
+        	<name>remote-repos</name>
+        	<url>http://repo.jelastic.servint.net/remote-repos</url>
+        	<id>remote-repos</id>
+    	</repository>
     </repositories>
     <properties>
         <hibernate.version>4.0.1.Final</hibernate.version>
