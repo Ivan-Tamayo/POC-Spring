@@ -18,7 +18,7 @@
 	<!-- 
     	<intercept-url pattern="/favicon.ico" filters="none" /> is not longer supported
      -->
-    <http pattern="/login.jsp" security="none"/>
+    <http pattern="/login.jsp" security="none" required-channel="http"/>
     <http pattern="/favicon.ico" security="none"/>
     
 
