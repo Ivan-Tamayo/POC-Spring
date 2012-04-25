@@ -1,14 +1,17 @@
-<configuration>
-      <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
-          <layout class="ch.qos.logback.classic.PatternLayout">
-                <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
-          </layout>
-      </appender>
-      
-      
-      <logger name="fr.gipmds" level="INFO"/>
-      <root level="INFO">
-                <appender-ref ref="STDOUT"/>
+<configuration debug="false">
+    
+  <!-- Console -->  
+    
+  <appender name="S" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %c{1} [%p] %m%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="org.w3c.tidy" level="OFF"/>
+  <logger name="ch.qos" level="OFF"/>
+  <logger name="org.slf4j" level="OFF"/>
 
-      </root>
+  <root level="DEBUG">
+    <appender-ref ref="S"/>
+  </root>
 </configuration>
