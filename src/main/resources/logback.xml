@@ -11,7 +11,7 @@
   <logger name="ch.qos" level="OFF"/>
   <logger name="org.slf4j" level="OFF"/>
 
-  <root level="DEBUG">
+  <root level="WARN">
     <appender-ref ref="S"/>
   </root>
 </configuration>

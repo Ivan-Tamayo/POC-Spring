@@ -11,5 +11,7 @@ import fr.gipmds.arpej.model.Utilisateur;
  *
  */
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
-
+	
+	public Utilisateur findByNomAndPrenomAndSiret(String nom, String prenom, String siret);
+	public Utilisateur findByNom(String nom);
 }

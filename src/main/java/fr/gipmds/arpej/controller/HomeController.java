@@ -26,6 +26,7 @@ public class HomeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showPage(ModelMap model) {
     	model.addAttribute("users", utilisateurRepository.findAll());
+    	model.addAttribute("userFound", utilisateurRepository.findByNomAndPrenomAndSiret("TEST-diane", "ARPEJ", "123456789"));
         return HOME_VIEW;
     }
 }

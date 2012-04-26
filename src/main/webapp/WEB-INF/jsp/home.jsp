@@ -13,14 +13,15 @@
     </p>
     <hr/>
     <table >
-    <tr><th>Siret</th>  <th>Nom</th>  <th>Prenom</th></tr>
-    <c:forEach items="${users}" var="user">
-    	<tr>
-    	<td>${user.siret}</td> <td>${user.nom}</td> <td>${user.prenom}</td>
-    	</tr>
-    </c:forEach>
-    </table>
-    
+    	<tr><th>Siret</th>  <th>Nom</th>  <th>Prenom</th></tr>
+    	<c:forEach items="${users}" var="user">
+    		<tr>
+    		<td>${user.siret}</td> <td>${user.nom}</td> <td>${user.prenom}</td>
+    		</tr>
+    	</c:forEach>
+	</table>
+    <br/>
+    Utilisateur found by nom and prenom and siret : ${userFound.id}
     
 </body>
 </html>
