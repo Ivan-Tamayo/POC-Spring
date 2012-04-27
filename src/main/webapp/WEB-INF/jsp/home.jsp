@@ -21,7 +21,7 @@
     	</c:forEach>
 	</table>
     <br/>
-    Utilisateur found by nom and prenom and siret : ${userFound.id}
-    
+    <hr/>
+    <a href="/logout">logout</a>
 </body>
 </html>

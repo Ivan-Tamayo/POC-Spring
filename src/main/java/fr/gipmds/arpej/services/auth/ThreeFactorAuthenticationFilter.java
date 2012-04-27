@@ -1,8 +1,16 @@
 package fr.gipmds.arpej.services.auth;
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;;
+
 
 /**
  * Custom {@link UsernamePasswordAuthenticationFilter} that includes three-factor
@@ -15,6 +23,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  */
 public class ThreeFactorAuthenticationFilter extends
 		UsernamePasswordAuthenticationFilter {
+	
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass().getName());
 	
 	private String nom = "j_nom";
 	private String prenom = "j_prenom";
@@ -40,10 +50,26 @@ public class ThreeFactorAuthenticationFilter extends
 		String combinedUsername = 	username +  getDelimiter() 
 								 	+ extraPrenom +  getDelimiter() 
 								 	+ extraSiret;
-
-		System.out.println("Triplet = " + combinedUsername);
 		return combinedUsername;
 	}
+	
+	
+
+	/* (non-Javadoc)
+	 * @see org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter#successfulAuthentication(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, org.springframework.security.core.Authentication)
+	 * Here the code after the authentication
+	 */
+	
+	@Override
+	protected void successfulAuthentication(HttpServletRequest request,
+			HttpServletResponse response, Authentication authResult)
+			throws IOException, ServletException {
+		// TODO Auto-generated method stub
+		super.successfulAuthentication(request, response, authResult);
+		LOGGER.debug("Utilisateur authenticated {}",authResult);
+	}
+	
+
 
 	/**
 	 * @return The delimiter string used to separate the username and extra

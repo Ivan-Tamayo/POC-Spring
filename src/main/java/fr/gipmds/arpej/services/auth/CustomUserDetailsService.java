@@ -15,8 +15,9 @@ import fr.gipmds.arpej.repository.UtilisateurRepository;
 @Service("userDetailsService")
 @Transactional(readOnly=true)
 public class CustomUserDetailsService implements UserDetailsService {
-
-	@Resource
+	
+	
+	@Autowired
 	private UtilisateurRepository utilisateurRepository;
 	
 	@Autowired
@@ -35,10 +36,6 @@ public class CustomUserDetailsService implements UserDetailsService {
 	    String nom 		= split[0];
 	    String prenom 	= split[1];
 	    String siret	= split [2];
-
-	    System.out.println("Nom = " + nom);
-	    System.out.println("Prenom = " + prenom);
-	    System.out.println("Siret = " + siret);
 
 	    Utilisateur user = utilisateurRepository.findByNomAndPrenomAndSiret(nom, prenom, siret);
 	    if(user == null)

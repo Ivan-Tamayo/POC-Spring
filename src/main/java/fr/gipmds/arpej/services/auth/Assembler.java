@@ -13,7 +13,6 @@ public class Assembler {
 	
 	private String delimiter = ":";
 
-	@Transactional(readOnly = true)
 	User buildUserFromUserEntity(Utilisateur userEntity) {
 
 		String username = 	userEntity.getNom() + delimiter 

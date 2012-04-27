@@ -18,7 +18,7 @@
 	<!-- 
     	<intercept-url pattern="/favicon.ico" filters="none" /> is not longer supported
      -->
-    <http pattern="/login.jsp" security="none"/>
+    <http pattern="/login.jsp" security="none" />
     <http pattern="/favicon.ico" security="none"/>
     
 
@@ -26,7 +26,7 @@
 	<!-- 
 		Filter https
 	-->	
-     <http auto-config="false" use-expressions="true" entry-point-ref="loginUrlAuthenticationEntryPoint">
+     <http auto-config="false" use-expressions="true" entry-point-ref="loginUrlAuthenticationEntryPoint" >
         <intercept-url pattern="/**" access="isAuthenticated()" />
         <custom-filter position="FORM_LOGIN_FILTER" ref="threeFactorAuthenticationFilter" />
         <logout logout-url="/logout" />
